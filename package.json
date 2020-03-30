@@ -1,0 +1,52 @@
+{
+  "private": true,
+  "repository": "https://github.com/comunica/examples/",
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=10.0"
+  },
+  "devDependencies": {
+    "lerna": "^3.4.0"
+  },
+  "pre-commit": [
+    "build",
+    "lint",
+    "test"
+  ],
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig-test-root.json"
+      }
+    },
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "(/test/.*|(\\.|/)(test|spec))\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "setupFilesAfterEnv": [ "./setup-jest.js" ],
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/mocks/",
+      "index.js"
+    ],
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "test-changed": "lerna run test --since HEAD",
+    "lint-changed": "lerna run lint --since HEAD",
+    "build-changed": "lerna run build --since HEAD",
+    "test": "lerna run test",
+    "test-ci": "lerna run test-ci",
+    "lint": "lerna run lint",
+    "clean": "rm -rf ./node_modules && rm -rf ./packages/*/node_modules",
+    "build": "lerna run build",
+    "postinstall": "yarn run build && lerna run prepare"
+  }
+}
