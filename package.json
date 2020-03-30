@@ -47,6 +47,6 @@
     "lint": "lerna run lint",
     "clean": "rm -rf ./node_modules && rm -rf ./packages/*/node_modules",
     "build": "lerna run build",
-    "postinstall": "yarn run build && lerna run prepare"
+    "postinstall": "yarn run build"
   }
 }

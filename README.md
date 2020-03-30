@@ -5,6 +5,20 @@
 
 This is a repository of [Comunica](https://github.com/comunica/comunica) examples.
 
+The packages in this monorepo are just created as an illustration on how packages can be created that make use of Comunica,
+they are not published to npm.
+All of these examples are available under the MIT license,
+so you are welcome to reuse any code from these examples any way you want.
+
+These examples are not meant to form fully detailed tutorials on how to build applications with Comunica.
+Instead, they represent fully functional packages with detailed documentation so that they can be used and adjusted as needed. 
+
+## Examples
+
+### Configure a custom Comunica SPARQL instance
+
+* [Replacing the HTTP actor with a Solid HTTP actor](https://github.com/comunica/examples/blob/master/packages/configure-sparql-http-solid/)
+
 ## Contributing new examples
 
 If you want to add examples to this repo,

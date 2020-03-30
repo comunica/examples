@@ -1,0 +1,9 @@
+
+{
+  "@context": [
+    "https://linkedsoftwaredependencies.org/bundles/npm/componentsjs/^3.0.0/components/context.jsonld",
+    {
+      "files-ex": "https://linkedsoftwaredependencies.org/bundles/npm/example-configure-sparql-http-solid/^1.0.0/"
+    }
+  ]
+}
