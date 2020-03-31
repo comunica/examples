@@ -4,7 +4,6 @@
   "description": "An example illustrating how to replace the HTTP actor with a Solid HTTP actor",
   "main": "index.js",
   "license": "MIT",
-  "private": true,
   "bin": {
     "my-comunica": "./bin/query.js",
     "my-comunica-http": "./bin/http.js",
