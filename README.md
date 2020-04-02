@@ -11,13 +11,23 @@ All of these examples are available under the MIT license,
 so you are welcome to reuse any code from these examples any way you want.
 
 These examples are not meant to form fully detailed tutorials on how to build applications with Comunica.
-Instead, they represent fully functional packages with detailed documentation so that they can be used and adjusted as needed. 
+Instead, they represent fully functional packages with detailed documentation so that they can be used and adjusted as needed.
+
+All of these examples make use of [TypeScript](https://www.typescriptlang.org/),
+a typed superset of JavaScript.
+TypeScript is not a requirement for using Comunica.
+All these examples will still work when removing all TypeScript configs
+and removing all typings from the `.ts` files. 
 
 ## Examples
 
 ### Configure a custom Comunica SPARQL instance
 
 * [Replacing the HTTP actor with a Solid HTTP actor](https://github.com/comunica/examples/blob/master/packages/configure-sparql-http-solid/)
+
+### Create a new Comunica actor
+
+* [Observe all received RDF triples](https://github.com/comunica/examples/blob/master/packages/actor-observe-rdf-dereference/)
 
 ## Contributing new examples
 
