@@ -1,18 +1,7 @@
-sudo: required
-services:
- - docker
-language: node_js
-matrix:
-  include:
-    - node_js: '10'
-    - node_js: '12'
-os:
- - linux
+import: rubensworks/travis-presets:node-base.yml@master
 install: yarn install --pure-lockfile
 script:
   - yarn run lint
   - yarn run test-ci
 cache:
   yarn: true
-  directories:
-    - node_modules
