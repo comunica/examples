@@ -39,10 +39,11 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "prepublishOnly": "yarn run build",
+    "prepublishOnly": "npm run build",
     "build:engine": "comunica-compile-config config/config-default.json > engine-default.js",
     "build:lib": "tsc",
-    "build": "yarn run build:lib && yarn run build:engine"
+    "build": "npm run build:lib && npm run build:engine",
+    "postinstall": "npm run build"
   },
   "browser": {
     "./index.js": "./index-browser.js"
