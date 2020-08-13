@@ -29,13 +29,11 @@
     "engine-default.js"
   ],
   "dependencies": {
-    "@comunica/actor-init-sparql": "^1.11.0",
-    "@comunica/actor-http-solid-auth-fetch": "^1.0.1",
-    "@types/minimist": "^1.2.0",
-    "@types/n3": "^1.1.5"
+    "@comunica/actor-init-sparql": "^1.14.0",
+    "@comunica/actor-http-solid-auth-fetch": "^1.0.1"
   },
   "devDependencies": {
-    "@comunica/runner": "^1.9.4",
+    "@comunica/runner": "^1.14.0",
     "typescript": "^3.8.3"
   },
   "scripts": {

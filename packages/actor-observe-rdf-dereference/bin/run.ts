@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import {ActorInitSparql} from "@comunica/actor-init-sparql";
 import {IActorQueryOperationOutputBindings} from "@comunica/bus-query-operation";
-import {Setup} from "@comunica/runner";
+import * as Setup from "@comunica/runner";
 import {MyActionObserverRdfDereference} from "..";
 
 (async function() {
