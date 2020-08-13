@@ -28,6 +28,7 @@ and removing all typings from the `.ts` files.
 ### Create a new Comunica actor
 
 * [Observe all received RDF triples](https://github.com/comunica/examples/blob/master/packages/actor-observe-rdf-dereference/)
+* [Query over a JSON weather API](https://github.com/comunica/examples/blob/master/packages/actor-rdf-resolve-quad-pattern-api-weather/)
 
 ## Contributing new examples
 

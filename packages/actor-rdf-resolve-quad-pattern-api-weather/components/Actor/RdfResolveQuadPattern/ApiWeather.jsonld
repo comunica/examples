@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://linkedsoftwaredependencies.org/bundles/npm/example-actor-rdf-resolve-quad-pattern-api-weather/^1.0.0/components/context.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/bus-rdf-resolve-quad-pattern/^1.0.0/components/context.jsonld"
+  ],
+  "@id": "npmd:example-actor-rdf-resolve-quad-pattern-api-weather",
+  "components": [
+    {
+      "@id": "ex:Actor/RdfResolveQuadPattern/ApiWeather",
+      "@type": "Class",
+      "extends": "cbrrqp:Actor/RdfResolveQuadPattern",
+      "requireElement": "ActorRdfResolveQuadPatternWeatherApi",
+      "comment": "Quad pattern resolver for a weather API",
+      "constructorArguments": [
+        {
+          "extends": "cbrrqp:Actor/RdfResolveQuadPattern/constructorArgumentsObject"
+        }
+      ]
+    }
+  ]
+}

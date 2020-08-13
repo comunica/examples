@@ -1,0 +1,9 @@
+{
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/example-actor-rdf-resolve-quad-pattern-api-weather/^1.0.0/components/context.jsonld",
+  "@id": "npmd:example-actor-rdf-resolve-quad-pattern-api-weather",
+  "@type": "Module",
+  "requireName": "example-actor-rdf-resolve-quad-pattern-api-weather",
+  "import": [
+    "files-ex:components/Actor/RdfResolveQuadPattern/ApiWeather.jsonld"
+  ]
+}
