@@ -12,6 +12,8 @@ so you are welcome to reuse any code from these examples any way you want.
 
 These examples are not meant to form fully detailed tutorials on how to build applications with Comunica.
 Instead, they represent fully functional packages with detailed documentation so that they can be used and adjusted as needed.
+If you are looking for detailed documentation for using and modifying Comunica,
+please refer to [our website](https://comunica.dev/docs/).
 
 All of these examples make use of [TypeScript](https://www.typescriptlang.org/),
 a typed superset of JavaScript.
