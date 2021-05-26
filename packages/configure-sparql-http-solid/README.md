@@ -27,13 +27,9 @@ and our tutorial on [creating a custom Comunica actor](https://github.com/comuni
 **1. package.json entries**
 
 In order for the Comunica framework to recognise your custom engine,
-you need to add these entries to your package.json file:
+you need to add this entry to your package.json file:
 
-* **Required:** `lsd:module`: The URL identifier of your package.
-* **Required:** `lsd:contexts`: The JSON-LD contexts that are exposed by your package.
-* **Optional:** `lsd:importPaths`: The parts of your package you want to make dereferenceable.
-
-Within each of these entries, replace `example-configure-sparql-http-solid` with your package name.
+* **Required:** `"lsd:module": true`: Indicates that this is a package with components for the Comunica framework.
 
 **2. components/config.jsonld**
 

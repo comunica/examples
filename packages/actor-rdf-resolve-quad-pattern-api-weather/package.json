@@ -9,15 +9,7 @@
     "my-comunica-http": "./bin/http.js",
     "my-comunica-dynamic": "./bin/query-dynamic.js"
   },
-  "lsd:module": "https://linkedsoftwaredependencies.org/bundles/npm/example-actor-rdf-resolve-quad-pattern-api-weather",
-  "lsd:components": "components/components.jsonld",
-  "lsd:contexts": {
-    "https://linkedsoftwaredependencies.org/bundles/npm/example-actor-rdf-resolve-quad-pattern-api-weather/^1.0.0/components/context.jsonld": "components/context.jsonld"
-  },
-  "lsd:importPaths": {
-    "https://linkedsoftwaredependencies.org/bundles/npm/example-actor-rdf-resolve-quad-pattern-api-weather/^1.0.0/components/": "components/",
-    "https://linkedsoftwaredependencies.org/bundles/npm/example-actor-rdf-resolve-quad-pattern-api-weather/^1.0.0/config/": "config/"
-  },
+  "lsd:module": true,
   "files": [
     "components",
     "config",
@@ -32,14 +24,14 @@
     "engine-default.js"
   ],
   "dependencies": {
-    "@comunica/actor-init-sparql": "^1.14.0",
-    "@comunica/core": "^1.14.0",
-    "@comunica/bus-rdf-resolve-quad-pattern": "^1.14.0",
-    "@comunica/runner": "^1.14.0",
+    "@comunica/actor-init-sparql": "^1.21.1",
+    "@comunica/core": "^1.21.1",
+    "@comunica/bus-rdf-resolve-quad-pattern": "^1.21.1",
+    "@comunica/runner": "^1.21.1",
     "@rdfjs/data-model": "^1.1.2",
     "@types/minimist": "^1.2.0",
     "@types/n3": "^1.1.5",
-    "asynciterator": "^3.0.1"
+    "asynciterator": "^3.1.0"
   },
   "devDependencies": {
     "typescript": "^4.0.0"

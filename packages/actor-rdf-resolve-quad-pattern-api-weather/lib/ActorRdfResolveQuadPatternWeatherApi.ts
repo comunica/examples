@@ -6,6 +6,7 @@ import {
 import { IActorTest } from '@comunica/core';
 import * as DataFactory from '@rdfjs/data-model';
 import { EmptyIterator, SingletonIterator } from 'asynciterator';
+import * as RDF from 'rdf-js';
 
 // Some constants that will be reused several times
 const RESOURCE_PREFIX = 'http://dbpedia.org/resource/';
@@ -49,19 +50,20 @@ export class ActorRdfResolveQuadPatternWeatherApi extends ActorRdfResolveQuadPat
       const temperature = await this.fetchCityTemperature(baseUrl, cityName);
 
       // Return a single triple '<http://dbpedia.org/resource/...> <http://example.org/temperature> "temperatureValue"'
-      return {
-        // SingletonIterator is an AsyncIterator with one data element
-        // Read more about AsyncIterators here: https://github.com/RubenVerborgh/AsyncIterator/
-        // ADVANCED: this data stream will not always be consumed. For better performance, autoStart can be set to false on large data streams.
-        data: new SingletonIterator(DataFactory.quad(
-          action.pattern.subject,
-          PREDICATE_WEATHER,
-          DataFactory.literal(temperature),
-        )),
-        // Metadata will be retrieved during query planning,
-        // and should provide an estimate of the number of items in the 'data' stream
-        metadata: async () => ({ totalItems: 1 }),
-      }
+      // SingletonIterator is an AsyncIterator with one data element
+      // Read more about AsyncIterators here: https://github.com/RubenVerborgh/AsyncIterator/
+      // ADVANCED: this data stream will not always be consumed. For better performance, autoStart can be set to false on large data streams.
+      const data = new SingletonIterator(DataFactory.quad(
+        action.pattern.subject,
+        PREDICATE_WEATHER,
+        DataFactory.literal(temperature),
+      ));
+
+      // Metadata will be retrieved during query planning,
+      // and should provide an estimate of the number of items in the 'data' stream
+      data.setProperty('metadata', { totalItems: 1 });
+
+      return { data };
     }
 
     // For patterns that match '?subject <http://example.org/temperature> ?object',
@@ -70,21 +72,21 @@ export class ActorRdfResolveQuadPatternWeatherApi extends ActorRdfResolveQuadPat
       && action.pattern.predicate.equals(PREDICATE_WEATHER)
       && action.pattern.object.termType === 'Variable'
       && action.pattern.graph.termType === 'DefaultGraph') {
-      return {
-        // EmptyIterator is an AsyncIterator without data elements
-        // Read more about AsyncIterators here: https://github.com/RubenVerborgh/AsyncIterator/
-        data: new EmptyIterator(),
-        // Metadata will be retrieved during query planning,
-        // and should provide an estimate of the number of items in the 'data' stream
-        metadata: async () => ({ totalItems: Infinity }),
-      };
+      // EmptyIterator is an AsyncIterator without data elements
+      // Read more about AsyncIterators here: https://github.com/RubenVerborgh/AsyncIterator/
+      const data = new EmptyIterator<RDF.Quad>();
+
+      // Metadata will be retrieved during query planning,
+      // and should provide an estimate of the number of items in the 'data' stream
+      data.setProperty('metadata', { totalItems: Infinity });
+
+      return { data };
     }
 
     // Return empty data and metadata for all other queries
-    return {
-      data: new EmptyIterator(),
-      metadata: async () => ({ totalItems: 0 }),
-    };
+    const data = new EmptyIterator<RDF.Quad>();
+    data.setProperty('metadata', { totalItems: 0 });
+    return { data };
   }
 
   protected async fetchCityTemperature(baseUrl: string, cityName: string) {
