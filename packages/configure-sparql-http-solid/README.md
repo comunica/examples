@@ -1,3 +1,5 @@
+**While this guide can still be followed, if you just want to query Solid pods with Comunica, you can use [this ready-to-use engine](https://comunica.dev/docs/query/advanced/solid/) instead.**
+
 # Comunica Example: Replacing the HTTP actor with a Solid HTTP actor
 
 This is an example [Comunica](https://github.com/comunica/comunica) package where the default HTTP actor has been replaced by the [Solid HTTP actor](https://github.com/comunica/actor-http-solid-auth-fetch).
